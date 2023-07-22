@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "name": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "metatag": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.meta-data"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.header"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.card"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.card"
+    },
+    "reviews": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.review"
+    }
+  }
+}

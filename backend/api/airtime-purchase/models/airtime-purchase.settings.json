@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "airtime_purchases",
+  "info": {
+    "name": "AirtimePurchase",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "provider": {
+      "model": "provider",
+      "via": "airtime_purchases"
+    },
+    "amount": {
+      "type": "integer",
+      "required": true
+    },
+    "buyer": {
+      "via": "airtime_purchases",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "trans_id": {
+      "type": "biginteger"
+    },
+    "recipient": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "processing",
+        "processed"
+      ]
+    }
+  }
+}

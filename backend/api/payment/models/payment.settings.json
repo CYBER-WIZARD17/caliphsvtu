@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "name": "payment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "decimal"
+    },
+    "reference": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "prevBal": {
+      "type": "decimal"
+    },
+    "currentBal": {
+      "type": "decimal"
+    },
+    "method": {
+      "type": "string"
+    },
+    "user": {
+      "via": "payments",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

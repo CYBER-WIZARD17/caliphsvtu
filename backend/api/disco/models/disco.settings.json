@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "discos",
+  "info": {
+    "name": "Disco",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "meterType": {
+      "via": "disco",
+      "collection": "meter",
+      "private": true
+    },
+    "initial": {
+      "type": "string"
+    },
+    "charge": {
+      "type": "integer",
+      "private": true
+    },
+    "electricity_payments": {
+      "via": "disco",
+      "collection": "electricity-payment",
+      "private": true
+    }
+  }
+}

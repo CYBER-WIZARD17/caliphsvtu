@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "electricity_payments",
+  "info": {
+    "name": "ElectricityPayment",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "accountNumber": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "integer"
+    },
+    "buyer": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "electricity_payments"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "processing",
+        "processed"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "prepaid",
+        "postpaid"
+      ]
+    },
+    "disco": {
+      "via": "electricity_payments",
+      "model": "disco"
+    },
+    "token": {
+      "type": "string"
+    },
+    "trans_id": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/discos",
+      "handler": "disco.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/discos/count",
+      "handler": "disco.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/discos/:id/payment",
+      "handler": "disco.payment",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/discos/:id",
+      "handler": "disco.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/discos",
+      "handler": "disco.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/discos/:id",
+      "handler": "disco.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/discos/:id",
+      "handler": "disco.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

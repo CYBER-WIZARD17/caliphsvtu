@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "name": "account"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bank": {
+      "type": "string"
+    },
+    "account_id": {
+      "type": "integer",
+      "private": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "biginteger"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "accounts"
+    }
+  }
+}

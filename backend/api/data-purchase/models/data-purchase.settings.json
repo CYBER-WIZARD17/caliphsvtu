@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "data_purchases",
+  "info": {
+    "name": "DataPurchase",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "buyer": {
+      "via": "data_purchases",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "plan": {
+      "model": "plan",
+      "via": "data_purchases"
+    },
+    "trans_id": {
+      "type": "biginteger"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "processed",
+        "processing"
+      ]
+    },
+    "recipient": {
+      "type": "string"
+    },
+    "provider": {
+      "model": "provider",
+      "via": "data_purchases"
+    }
+  }
+}

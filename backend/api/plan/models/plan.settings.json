@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plans",
+  "info": {
+    "name": "plan",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "provider": {
+      "via": "plans",
+      "model": "provider"
+    },
+    "cost": {
+      "type": "integer",
+      "private": true
+    },
+    "value": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "SME",
+        "GIFTING"
+      ]
+    },
+    "selling_price": {
+      "type": "integer"
+    },
+    "validity": {
+      "type": "text"
+    },
+    "data_id": {
+      "type": "string",
+      "private": true
+    },
+    "data_purchases": {
+      "via": "plan",
+      "private": true,
+      "collection": "data-purchase"
+    }
+  }
+}
